@@ -109,10 +109,7 @@ class Turtle:
             print "Taking " + str(nextInstruction[1]) + " steps"
             for steps in range(nextInstruction[1]):
                 self.step()
-            print "Now at (" + str(self.x) + ", " + str(self.y) + ")"
-
-            
-            
+            print "Now at (" + str(self.x) + ", " + str(self.y) + ")"            
 
 if __name__ == "__main__":
     # Hello bob.
