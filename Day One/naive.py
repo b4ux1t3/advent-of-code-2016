@@ -22,6 +22,14 @@ class Turtle:
     # Dictionary of rotational movement
     rotation = {"R": 1, "L": -1}
 
+    # This dictionary keeps track of how many times the turtle has visited 
+    # each point on the plane. This is for Part Two
+    visited = dict()
+
+    # These are for Part Two
+    crossed = False
+    firstCrossedPoint = 0
+
     # All turtles will start off at position (0, 0) and facing North.
     def __init__(self):
         self.x = 0
@@ -70,13 +78,30 @@ class Turtle:
         self.x += self.velocities[self.direction][0]
         self.y += self.velocities[self.direction][1]
 
+        # For Part Two: Add the position to the visited dictionary   
+        pos = self.x, self.y
+
+        # Check if the position is in the keys already, then check if we've 
+        # crossed our path before. If we haven't this is the first time, 
+        # and we should save this position to firstCrossedPoint. Either way,
+        # we want to 
+        if pos in self.visited.keys():
+            if not self.crossed:
+                self.firstCrossedPoint = pos
+                self.crossed = True
+            self.visited[pos] += 1
+        else:
+            self.visited[pos] = 1
+
+        
     # Now the turtle has to walk the path described in the instructions. 
     # The turtle will go through each instruction in the list he is given, 
     # parse them using his parseInstruction method, and then execute that 
     # instruction by adding the velocity described by the instruction to 
     # his position
     def walkPath(self, instructions):
-        # Each instruction is in the format (rotation, steps), where rotation is a single character and steps is an integer.
+        # Each instruction is in the format (rotation, steps), where 
+        # rotation is a single character and steps is an integer.
         for instruction in instructions:
             # Parse the instruction, turn, and then take n steps
             nextInstruction = self.parseInstruction(instruction)
@@ -85,6 +110,9 @@ class Turtle:
             for steps in range(nextInstruction[1]):
                 self.step()
             print "Now at (" + str(self.x) + ", " + str(self.y) + ")"
+
+            
+            
 
 if __name__ == "__main__":
     # Hello bob.
@@ -101,3 +129,5 @@ if __name__ == "__main__":
     bob.walkPath(instructions)
 
     print "It will take " + str(abs(bob.x) + abs(bob.y)) + " steps totake the most efficient route."
+
+    print "First crossed our own path at position at " + str(bob.firstCrossedPoint) + ", which is " + str(abs(bob.firstCrossedPoint[0]) + abs(bob.firstCrossedPoint[1])) + " blocks away from the start."

@@ -33,3 +33,7 @@
     The instruction parsing method will simply take the first character of an instruction, and split that from the remaining characters. Then, the remaining characters will be converted into an integer. If it can't, the instruction will be thrown out.
 
     Incidentally, there is not a single `if` statement in the main body of this code. I'm not sure if that's a good thing or a bad one, but I thought  it was interesting that I thought that way.
+
+## Part Two
+* [Naive approach](naive.py) [Python]
+    * Uses the same program as before. I'm just adding a dictionary that counts the number of times you visit a particular spot.
