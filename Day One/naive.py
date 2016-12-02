@@ -70,8 +70,8 @@ class Turtle:
         self.x += self.velocities[self.direction][0]
         self.y += self.velocities[self.direction][1]
 
-    # Now the turtle has to walk the path described in the instructions. Th 
-    # turtle will go through each instruction in the list he is given, 
+    # Now the turtle has to walk the path described in the instructions. 
+    # The turtle will go through each instruction in the list he is given, 
     # parse them using his parseInstruction method, and then execute that 
     # instruction by adding the velocity described by the instruction to 
     # his position
@@ -97,6 +97,7 @@ if __name__ == "__main__":
     # Split the instructions into a list.
     instructions = instructions.split(", ")
 
+    # Okay, bob, time to go for a little walk.
     bob.walkPath(instructions)
 
     print "It will take " + str(abs(bob.x) + abs(bob.y)) + " steps totake the most efficient route."

@@ -31,3 +31,5 @@
     So, if the turtle is facing **N**orth, the command `L4` will decrement the index in our list of directions, making it face **W**est, and then find that it needs to add `-1` to its `x` coordinate and `0` to its `y` coordinate `4` times.
 
     The instruction parsing method will simply take the first character of an instruction, and split that from the remaining characters. Then, the remaining characters will be converted into an integer. If it can't, the instruction will be thrown out.
+
+    Incidentally, there is not a single `if` statement in the main body of this code. I'm not sure if that's a good thing or a bad one, but I thought  it was interesting that I thought that way.
