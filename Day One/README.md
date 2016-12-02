@@ -20,12 +20,14 @@
 
 ###Attempts
 * [Naive approach](naive.py) [Python]
-    * Uses a simple regex to parse the inputs, then traverses a grid and figures out where the end point is. Then it simply adds the absolute values of the cartesian cooridinates up to provide a minimum number of steps.
+    * Uses a simple parsing function to parse the inputs, then traverses a grid and figures out where the end point is. Then it adds the absolute values of the cartesian cooridinates up to provide a minimum number of steps.
 
-    In order to keep track of which direction our [turtle](https://en.wikipedia.org/wiki/Turtle_(robot)) is facing, we will have a list containing all of the directions, **N**orth, **E**ast, **S**outh, **W**est. For each instruction, we will increment the direction one index for every `R` command, which will turn our turtle clockwise, and decrement one index for each `L` command, which will turn our tutle counter-clockwise. 
+    In order to keep track of which direction our [turtle](https://en.wikipedia.org/wiki/Turtle_(robot)) is facing, we will have a list containing all of the directions, **N**orth, **E**ast, **S**outh, **W**est. For each instruction, we will increment the direction one index for every `R` command, which will turn our turtle clockwise, and decrement one index for each `L` command, which will turn our turtle counter-clockwise. 
     
     Then the turtle will walk along the cartesian plane the specified number of steps. It will do this by looking up the direction in a dictionary, which will be mapped to a differential corresponding to the `x` and `y` values of the turtle. For instance, if the turtle is facing **W**est, it will look up `W` in the dictionary, and see that it needs to add `-1` to its `x` cooridnate and `0` to its `y` coordinate.
 
     This will allow us to also move diagonally if we need to add that in the future.
     
     So, if the turtle is facing **N**orth, the command `L4` will decrement the index in our list of directions, making it face **W**est, and then find that it needs to add `-1` to its `x` coordinate and `0` to its `y` coordinate `4` times.
+
+    The instruction parsing method will simply take the first character of an instruction, and split that from the remaining characters. Then, the remaining characters will be converted into an integer. If it can't, the instruction will be thrown out.
