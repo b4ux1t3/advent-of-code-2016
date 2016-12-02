@@ -8,7 +8,7 @@ To run the code here, you're going to need a compiler, interpreter or SDK for th
 
 * [Python](https://python.org) - Comes installed on most Linux distributions and all Mac systems. Windows users will have to install it.
 * [Go](https://golang.org) - From Google, this is my favorite language. Works on all platforms.
-* [C#](https://www.visualstudio.com/vs/community/) - The easiest way to work with C# is with Visual Studio on Windows. That is literally what it's designed for. There are, however, other options, like [Mono Develop](http://www.monodevelop.com/)
+* [C#](https://www.visualstudio.com/vs/community/) - The easiest way to work with C# is with Visual Studio on Windows. That is literally what it's designed for. There are, however, other options for other platforms, like [MonoDevelop](http://www.monodevelop.com/). C# code should runperfectly fine no matter what environment you're using, though these environments have a bit of a learning curve.
 * [Android](https://developer.android.com/studio/index.html) - While I typically use [Xamarin](https://www.xamarin.com/) to build my Android apps, I will use Android Studio for the purposes of this project.
 * C and C++ - For these you're going to have to find your own compiler. It's very different for each platform, and it's likely that you already know what you're looking for if you want to compile a basic C program. :)
 * JavaScript - Nothing special required for this: Just run it in your browser!
