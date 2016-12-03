@@ -29,7 +29,7 @@
 `Your puzzle input is the instructions from the document you found at the front desk. What is the bathroom code?`
 
 ###Attempts
-* [Overkill](DayThree)
+* [Overkill](Pointed)
     * Using Visual Studio, C++, and pointers to create a simple solution to the problem.
 
     The keypad will be stored in a simple, one-dimensional array. Yep. You heard me. To figure out where we need to move, there will be a lookup table (surprise surprise!) for each of the directions that your finger could have to move. The finger will simply look up the direction it needs to move, and then apply that change to its position in the array. A direction of **U**p maps to `-3`, **D**own maps to `3`, **L**eft maps to `-1`, and **R**ight maps to `1`. If the finger movesout of the array, it will go to a special pointer, which points to the previous position.
