@@ -36,11 +36,9 @@
 
     So, in memory, everything is represented like so:
 
-    `buttons            {1, 2, 3, 4, 5, 6, 7, 8, 9}`
-
-    `currentButton          ^`
-    
-    `lastButton             ^`
+        buttons            {1, 2, 3, 4, 5, 6, 7, 8, 9}
+        currentButton          ^
+        lastButton             ^
 
     Current button simply stores the address of where the finger (The pointer, get it?) is, and last button stores where the finger _was_ before it started moving. If we try to go up from the address of `2`, the currentButton will have `-3` added to it, and will become `-1`. We will check for this when we are done moving, and simply move it back to the `lastButton` address. Once we are done moving, we will update `lastButton`.
 
