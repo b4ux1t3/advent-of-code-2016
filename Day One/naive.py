@@ -125,6 +125,6 @@ if __name__ == "__main__":
     # Okay, bob, time to go for a little walk.
     bob.walkPath(instructions)
 
-    print "It will take " + str(abs(bob.x) + abs(bob.y)) + " steps totake the most efficient route."
+    print "It will take " + str(abs(bob.x) + abs(bob.y)) + " steps to take the most efficient route."
 
     print "First crossed our own path at position at " + str(bob.firstCrossedPoint) + ", which is " + str(abs(bob.firstCrossedPoint[0]) + abs(bob.firstCrossedPoint[1])) + " blocks away from the start."
